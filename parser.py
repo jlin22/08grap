@@ -169,9 +169,9 @@ def parse_file( fname, edges, polygons, transform, screen, color ):
             matrix_mult( transform, polygons )
 
         elif line == 'display' or line == 'save':
-            clear_screen(screen)
-            draw_lines(edges, screen, color)
-            draw_polygons(polygons, screen, color)
+            #clear_screen(screen)
+            #draw_lines(edges, screen, color)
+            #draw_polygons(polygons, screen, color)
 
             if line == 'display':
                 display(screen)
@@ -180,16 +180,3 @@ def parse_file( fname, edges, polygons, transform, screen, color ):
         c+= 1
 
 
-
-screen = new_screen()
-color = [ 0, 255, 0 ]
-edges = []
-polygons = []
-identity = new_matrix()
-ident(identity)
-
-transform = []
-transform.append(identity)
-
-parse_file( 'script', edges, polygons, transform, screen, color )
-save_ppm(screen, "robot.ppm")
