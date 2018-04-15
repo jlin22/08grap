@@ -8,6 +8,10 @@ screen = new_screen()
 color = [ 0, 255, 0 ]
 edges = []
 polygons = []
-transform = new_matrix()
+identity = new_matrix()
+ident(identity)
+
+transform = []
+transform.append(identity)
 
 parse_file( 'script', edges, polygons, transform, screen, color )
